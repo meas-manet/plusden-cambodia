@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 8%;
+
+    --primary: 200 95% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 40% 8%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 195 85% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 200 95% 20%;
+    
+    /* Custom dental brand colors */
+    --brand-blue: 200 95% 20%;
+    --brand-teal: 195 85% 45%;
+    --brand-light: 210 40% 98%;
+    --brand-dark: 210 40% 8%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-teal)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-blue) / 0.9), hsl(var(--brand-teal) / 0.8));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--brand-blue) / 0.1);
+    --shadow-medium: 0 8px 30px -6px hsl(var(--brand-blue) / 0.15);
+    --shadow-strong: 0 20px 40px -12px hsl(var(--brand-blue) / 0.25);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 40% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 215 20% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 215 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 195 85% 45%;
+    --primary-foreground: 210 40% 8%;
+
+    --secondary: 215 20% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 200 95% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 195 85% 45%;
+    
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--accent) / 0.9), hsl(var(--primary) / 0.8));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Rich Text Editor Styles */
+.rich-text-editor-content .ProseMirror {
+  @apply min-h-[120px] p-3 focus:outline-none;
+}
+
+.rich-text-editor-content .ProseMirror p.is-editor-empty:first-child::before {
+  @apply text-muted-foreground pointer-events-none float-left h-0;
+  content: attr(data-placeholder);
+}
+
+/* Heading styles */
+.rich-text-editor-content .ProseMirror h1 {
+  @apply text-2xl font-bold mt-4 mb-2;
+}
+
+.rich-text-editor-content .ProseMirror h2 {
+  @apply text-xl font-bold mt-3 mb-2;
+}
+
+.rich-text-editor-content .ProseMirror h3 {
+  @apply text-lg font-semibold mt-2 mb-1;
+}
+
+/* Paragraph */
+.rich-text-editor-content .ProseMirror p {
+  @apply my-2;
+}
+
+/* List styles - CRITICAL for proper list rendering */
+.rich-text-editor-content .ProseMirror ul {
+  @apply list-disc pl-6 my-2;
+}
+
+.rich-text-editor-content .ProseMirror ol {
+  @apply list-decimal pl-6 my-2;
+}
+
+.rich-text-editor-content .ProseMirror li {
+  @apply my-1;
+}
+
+.rich-text-editor-content .ProseMirror li p {
+  @apply my-0;
+}
+
+/* Nested lists */
+.rich-text-editor-content .ProseMirror ul ul,
+.rich-text-editor-content .ProseMirror ol ol,
+.rich-text-editor-content .ProseMirror ul ol,
+.rich-text-editor-content .ProseMirror ol ul {
+  @apply my-1;
+}
+
+/* Blockquote */
+.rich-text-editor-content .ProseMirror blockquote {
+  @apply border-l-4 border-primary/30 pl-4 italic my-4 text-muted-foreground;
+}
+
+/* Horizontal rule */
+.rich-text-editor-content .ProseMirror hr {
+  @apply border-t border-border my-4;
+}
+
+/* Bold & Italic */
+.rich-text-editor-content .ProseMirror strong {
+  @apply font-bold;
+}
+
+.rich-text-editor-content .ProseMirror em {
+  @apply italic;
+}
+
+.rich-text-editor-content .ProseMirror u {
+  @apply underline;
+}
+
+/* Text alignment */
+.rich-text-editor-content .ProseMirror [style*="text-align: center"] {
+  text-align: center;
+}
+
+.rich-text-editor-content .ProseMirror [style*="text-align: right"] {
+  text-align: right;
+}
+
+.rich-text-editor-content .ProseMirror [style*="text-align: justify"] {
+  text-align: justify;
+}
