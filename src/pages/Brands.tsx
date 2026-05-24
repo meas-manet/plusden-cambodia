@@ -10,7 +10,7 @@ import { Loader2, Package, ArrowRight } from 'lucide-react';
 export default function Brands() {
   const [searchParams] = useSearchParams();
   const brandId = searchParams.get('brand');
-  
+
   const [brands, setBrands] = useState<Brand[]>([]);
   const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
@@ -76,7 +76,7 @@ export default function Brands() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
-      
+
       <main className="flex-1">
         {/* Hero Banner */}
         <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">
@@ -88,8 +88,8 @@ export default function Brands() {
                 </Link>
                 <div className="flex items-center gap-6 mt-4">
                   {selectedBrand.image_url && (
-                    <img 
-                      src={selectedBrand.image_url} 
+                    <img
+                      src={selectedBrand.image_url}
                       alt={selectedBrand.name}
                       className="w-24 h-24 object-contain bg-white rounded-lg p-2 shadow"
                     />

@@ -42,15 +42,15 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you soon.",
     });
-    
+
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
@@ -88,7 +88,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-24 bg-gradient-to-br from-primary/5 via-background to-primary/10">
@@ -142,9 +142,9 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Full Name</Label>
-                        <Input 
-                          id="name" 
-                          name="name" 
+                        <Input
+                          id="name"
+                          name="name"
                           placeholder="Your name"
                           value={formData.name}
                           onChange={handleChange}
@@ -153,10 +153,10 @@ const Contact = () => {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input 
-                          id="email" 
-                          name="email" 
-                          type="email" 
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
                           placeholder="your@email.com"
                           value={formData.email}
                           onChange={handleChange}
@@ -167,9 +167,9 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number</Label>
-                        <Input 
-                          id="phone" 
-                          name="phone" 
+                        <Input
+                          id="phone"
+                          name="phone"
                           placeholder="+855 xx xxx xxx"
                           value={formData.phone}
                           onChange={handleChange}
@@ -177,9 +177,9 @@ const Contact = () => {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="subject">Subject</Label>
-                        <Input 
-                          id="subject" 
-                          name="subject" 
+                        <Input
+                          id="subject"
+                          name="subject"
                           placeholder="How can we help?"
                           value={formData.subject}
                           onChange={handleChange}
@@ -189,9 +189,9 @@ const Contact = () => {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message">Message</Label>
-                      <Textarea 
-                        id="message" 
-                        name="message" 
+                      <Textarea
+                        id="message"
+                        name="message"
                         placeholder="Tell us more about your inquiry..."
                         rows={5}
                         value={formData.message}

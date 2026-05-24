@@ -13,7 +13,7 @@ export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') || 'all';
   const initialBrand = searchParams.get('brand') || 'all';
-  
+
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
@@ -65,9 +65,9 @@ export default function Products() {
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
-        p => p.name.toLowerCase().includes(query) || 
-             p.description?.toLowerCase().includes(query) ||
-             p.category?.toLowerCase().includes(query)
+        p => p.name.toLowerCase().includes(query) ||
+          p.description?.toLowerCase().includes(query) ||
+          p.category?.toLowerCase().includes(query)
       );
     }
 
@@ -101,7 +101,7 @@ export default function Products() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
-      
+
       <main className="flex-1">
         {/* Hero Banner */}
         <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">

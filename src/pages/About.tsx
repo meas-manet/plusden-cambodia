@@ -37,32 +37,32 @@ const About = () => {
   ];
 
   const values = [
-    { 
-      icon: Award, 
-      title: "Quality Excellence", 
-      description: "We source only the finest dental products from reputable manufacturers worldwide." 
+    {
+      icon: Award,
+      title: "Quality Excellence",
+      description: "We source only the finest dental products from reputable manufacturers worldwide."
     },
-    { 
-      icon: Target, 
-      title: "Customer Focus", 
-      description: "Your success is our priority. We provide personalized solutions for every practice." 
+    {
+      icon: Target,
+      title: "Customer Focus",
+      description: "Your success is our priority. We provide personalized solutions for every practice."
     },
-    { 
-      icon: Heart, 
-      title: "Passion for Dentistry", 
-      description: "We are dedicated to advancing dental care through innovation and expertise." 
+    {
+      icon: Heart,
+      title: "Passion for Dentistry",
+      description: "We are dedicated to advancing dental care through innovation and expertise."
     },
-    { 
-      icon: Users, 
-      title: "Expert Team", 
-      description: "Our knowledgeable staff provides exceptional service and technical support." 
+    {
+      icon: Users,
+      title: "Expert Team",
+      description: "Our knowledgeable staff provides exceptional service and technical support."
     }
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-24 bg-gradient-to-br from-primary/5 via-background to-primary/10">

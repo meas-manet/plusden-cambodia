@@ -46,7 +46,7 @@ const Navigation = () => {
           <Button variant="ghost" size="sm" className="hidden md:flex" onClick={handleSearch}>
             <Search className="h-4 w-4" />
           </Button>
-          
+
           {/* Mobile menu button */}
           <Button
             variant="ghost"

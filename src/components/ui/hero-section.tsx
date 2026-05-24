@@ -76,9 +76,8 @@ const HeroSection = () => {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === currentSlideIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
-            }`}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlideIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+              }`}
           >
             <img src={getSlideImage(slide, index)} alt={slide.title} className="w-full h-full object-cover" />
           </div>
@@ -118,9 +117,8 @@ const HeroSection = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlideIndex ? "bg-primary scale-125 w-8" : "bg-foreground/30 hover:bg-foreground/50"
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlideIndex ? "bg-primary scale-125 w-8" : "bg-foreground/30 hover:bg-foreground/50"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

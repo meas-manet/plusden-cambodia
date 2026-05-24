@@ -73,7 +73,7 @@ export default function ProductDetail() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
-      
+
       <main className="flex-1">
         {/* Breadcrumb */}
         <div className="border-b bg-muted/30">
@@ -121,7 +121,7 @@ export default function ProductDetail() {
               {/* Product Info */}
               <div className="space-y-6">
                 {product.category && (
-                  <Link 
+                  <Link
                     to={`/products?category=${encodeURIComponent(product.category)}`}
                     className="text-sm text-primary font-medium hover:underline"
                   >
@@ -140,7 +140,7 @@ export default function ProductDetail() {
                 {product.description && (
                   <div className="space-y-2">
                     <h3 className="font-semibold text-lg">Description</h3>
-                    <div 
+                    <div
                       className="prose prose-gray max-w-none text-muted-foreground"
                       dangerouslySetInnerHTML={{ __html: product.description }}
                     />
@@ -150,7 +150,7 @@ export default function ProductDetail() {
                 {product.spec && (
                   <div className="space-y-2">
                     <h3 className="font-semibold text-lg">Specifications</h3>
-                    <div 
+                    <div
                       className="prose prose-gray max-w-none text-muted-foreground [&_table]:w-full [&_table]:border-collapse [&_td]:border [&_td]:border-border [&_td]:p-2 [&_th]:border [&_th]:border-border [&_th]:p-2 [&_th]:bg-muted"
                       dangerouslySetInnerHTML={{ __html: product.spec }}
                     />
@@ -160,7 +160,7 @@ export default function ProductDetail() {
                 {product.notes && (
                   <div className="space-y-2">
                     <h3 className="font-semibold text-lg">Notes</h3>
-                    <div 
+                    <div
                       className="prose prose-gray max-w-none text-muted-foreground bg-muted/50 rounded-lg p-4"
                       dangerouslySetInnerHTML={{ __html: product.notes }}
                     />

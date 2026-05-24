@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
 async function apiFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${API_BASE_URL}${path}`);
@@ -51,10 +51,10 @@ export interface HomeContent {
 }
 
 export const api = {
-  getHeroSlides: () => apiFetch<HeroSlide[]>('/api/hero-slides'),
-  getProducts: () => apiFetch<Product[]>('/api/products'),
+  getHeroSlides: () => apiFetch<HeroSlide[]>("/api/hero-slides"),
+  getProducts: () => apiFetch<Product[]>("/api/products"),
   getProduct: (id: string) => apiFetch<Product>(`/api/products/${id}`),
-  getBrands: () => apiFetch<Brand[]>('/api/brands'),
+  getBrands: () => apiFetch<Brand[]>("/api/brands"),
   getBrand: (id: string) => apiFetch<Brand>(`/api/brands/${id}`),
-  getHomeContent: () => apiFetch<HomeContent[]>('/api/home-content'),
+  getHomeContent: () => apiFetch<HomeContent[]>("/api/home-content"),
 };

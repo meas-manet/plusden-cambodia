@@ -27,7 +27,7 @@ const AboutSection = () => {
   const aboutTitle = aboutContent?.title || "About PLUSDEN Cambodia";
   const aboutSubtitle = aboutContent?.subtitle || "Leading Dental Supplier Since 2010";
   const aboutDescription = aboutContent?.description || "PLUSDEN Cambodia is your trusted partner in dental excellence. We specialize in providing premium dental supplies, equipment, and instruments that meet the highest international standards. Our mission is to support dental professionals with innovative solutions that enhance patient care and practice efficiency.";
-  
+
   const contactTitle = contactContent?.title || "Get in Touch";
   const contactDescription = contactContent?.description || "Ready to upgrade your dental practice? Contact our expert team today.";
 
@@ -49,12 +49,12 @@ const AboutSection = () => {
                 {aboutTitle}
               </span>
             </div>
-            
+
             <h2 className="text-4xl font-bold mb-6">
               {aboutSubtitle}
               <span className="text-primary block">Across Cambodia</span>
             </h2>
-            
+
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               {aboutDescription}
             </p>
@@ -89,7 +89,7 @@ const AboutSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             {/* Floating Stats Card */}
             <Card className="absolute bottom-6 left-6 right-6 bg-background/95 backdrop-blur">
               <CardContent className="p-6">
